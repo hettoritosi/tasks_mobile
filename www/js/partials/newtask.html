@@ -1,0 +1,66 @@
+<ion-side-menus>
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+      <header class="bar bar-header bar-stable">
+      <h1 class="title">Olá {{user_name}}</h1>
+    </header>
+  <mypanel selected="newtask" user-admin="user_admin"></mypanel>
+  </ion-side-menu>
+
+
+  <ion-side-menu-content>
+     <ion-header-bar class="navbar navbar-default">
+        <img src="img/studiare-logo.png"> 
+          <button menu-toggle="right" class="button button-icon button-clear ion-navicon" ></button>
+      </ion-header-bar> 
+<ion-content>
+  <br>
+  <br>
+  <br>
+    <center>
+    <h2>Nova Tarefa</h2>
+    <br>
+    <form novalidate  name = "formulario">
+    </center>
+     <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"><b>Título</b></span>
+    <input type="text" placeholder="Your Title here" ng-model="improvement.title" required>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"><b>Categoria</b></span>
+    <input type="text" placeholder="Your Category here" ng-model="improvement.category" required>
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label"><b>Conteúdo</b></span>
+    <input type="text" placeholder="Your Content here" ng-model="improvement.content" required>
+  </label>
+      <div class="list">
+  <label class="item item-input item-select">
+    <div class="input-label">
+      <b>Status</b>
+    </div>
+    <select>
+      <option selected>In Progress</option>
+    </select>
+  </label>
+  <div class="list">
+  <label class="item item-input item-select">
+    <div class="input-label" id="sright">
+      <b>Responsável</b>
+    </div>
+    <select ng-model="improvement.responsible_id" data-ng-options="user.id as user.name for user in users">
+    </select>
+  </label>
+</div>
+</div>
+</div>
+<center>
+      <button class="button button-block button-studiare" ng-click="submeter()" ng-disabled="!improvement.title" >Nova Tarefa</button>
+</center>
+</form>
+<br>
+<br>
+<br>
+</ion-content>
+<mypanelall></mypanelall>

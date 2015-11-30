@@ -1,0 +1,62 @@
+<ion-side-menus>
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+      <header class="bar bar-header bar-stable">
+      <h1 class="title">Olá {{user_name}}</h1>
+    </header>
+  <mypanel user-admin="user_admin"></mypanel>
+  </ion-side-menu>
+
+
+  <ion-side-menu-content>
+     <ion-header-bar class="navbar navbar-default">
+        <img src="img/studiare-logo.png"> 
+          <button menu-toggle="right" class="button button-icon button-clear ion-navicon" ></button>
+      </ion-header-bar> 
+<ion-content>
+<br>
+<br>
+<br>
+          <center><h3>Mais Sobre: {{improvement.title}}</h3></center>
+      <div class="item item-divider">
+        <p class = "title-more">Titulo:</p>
+        <p class = "info-more">{{improvement.title}}</p>
+      </div>
+      <div class="item item-divider">
+        <p class = "title-more">Categoria:</p>
+        <p class = "info-more">{{improvement.category}}</p>
+      </div>
+      <div class="item item-divider">
+        <p class = "title-more">Conteúdo:</p>
+        <p class = "info-more "><ion-item class="item-text-wrap   grey">{{improvement.content}}</ion-item></p>
+      </div>
+        <div class="item item-divider">
+        <p class = "title-more">Criado por:</p>
+        <p class = "info-more">{{improvement.user.name}}</p>
+      </div>
+      <div class="item item-divider">
+        <p class = "title-more">Responsável:</p>
+        <p class = "info-more">{{improvement.responsible.name}}</p>
+      </div>
+        <div class="item item-divider">
+        <p class = "title-more">Criado em :</p>
+        <p class = "info-more">{{improvement.created_at | date:'d/M/yyyy'}}</p>
+      </div>
+      <div class="item item-divider">
+        <p class = "title-more">Atualizado em:</p>
+        <p class = "info-more">{{improvement.updated_at | date:'d/M/yyyy'}}</p>
+      </div>
+        <div class="item item-divider">
+        <p class = "title-more">Status:</p>
+        <p class = "info-more">{{improvement.status.name}}</p>
+      </div>
+</div>
+       <br>
+       <br>
+       <br>
+       <br>
+</ion-content>
+
+<mypanelall></mypanelall>
+  </ion-side-menu-content>
+</ion-side-menus>

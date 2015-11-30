@@ -1,0 +1,50 @@
+<ion-side-menus>
+  <!-- Right menu -->
+  <ion-side-menu side="right">
+      <header class="bar bar-header bar-stable">
+      <h1 class="title">Olá {{user_name}}</h1>
+    </header>
+  <mypanel selected="users" user-admin="user_admin"></mypanel>
+  </ion-side-menu>
+
+
+  <ion-side-menu-content>
+     <ion-header-bar class="navbar navbar-default">
+        <img src="img/studiare-logo.png"> 
+          <button menu-toggle="right" class="button button-icon button-clear ion-navicon" ></button>
+      </ion-header-bar> 
+<ion-content>
+ <br>
+    <ion-refresher pulling-text="Puxe para Atualizar" on-refresh="doRefresh()">
+    </ion-refresher>
+   <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search" ng-model="filtro">
+      </label>
+    </div>
+     <center>
+      <h2>Tarefas de : {{user.name}}</h2>
+     </center>
+    <div ng-repeat="improvement in improvements | filter: {responsible_id: user.id , status_id:'!3'} | filter: filtro | orderBy: '-updated_at' track by $index">
+        <div class="card">
+        <div class="item item-divider">
+    <p><b><div style = "font-size: 15px">{{improvement.title}} </div></p></b>
+       </div>
+        <div class="item item-text-wrap">
+    <p><div style = "font-size: 15px">{{improvement.content}} </div></p>
+       </div>
+         <div class="item item-divider">
+        <morebutton></morebutton>
+          <graveyardbutton></graveyardbutton>
+  </div>
+     </div>
+   </div>
+
+       <br>
+       <br>
+</ion-content>
+
+<mypanelall></mypanelall>
+  </ion-side-menu-content>
+</ion-side-menus>

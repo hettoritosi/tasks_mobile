@@ -1,0 +1,24 @@
+	<ion-content class="has-header">
+		<ion-list>
+		<ion-item nav-clear>
+			<a class="icon ion-home" ng-class="{selected: selected=='allimprovements'}" ng-click="allimprovements()"><b> Todas as Tarefas</b></a>
+		</ion-item>
+		<ion-item nav-clear>
+    		<a class="ion-paperclip" ng-class="{selected: selected=='home'}" ng-click="home()"><b>  Minhas Tarefas</b></a>
+    	</ion-item>
+    	<ion-item nav-clear>
+			<a class="ion-edit" ng-class="{selected: selected=='newtask'}" ng-click="newtask()"><b>  Nova Tarefa</b></a>
+		</ion-item>
+		<ion-item nav-clear>
+			<a class="ion-social-snapchat" ng-class="{selected: selected=='graveyard'}" ng-click="graveyard()"><b>  Cemitério</b></a>
+		</ion-item>
+		<div ng-if="userAdmin == true">
+		<ion-item nav-clear>
+			<a class="ion-person-stalker" ng-class="{selected: selected=='users'}" ng-click="usuarios()"><b> Usuários</b></a>
+		</ion-item>
+		</div>
+		<ion-item nav-clear>
+			<a class="ion-close-circled" ng-click="logout()"><b>  Sair</b></a>
+		</ion-item>
+		</ion-list>
+	 </ion-content>
